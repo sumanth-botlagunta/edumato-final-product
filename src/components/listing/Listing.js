@@ -6,6 +6,8 @@ import CostFilter from '../filters/CostFilter'
 import './listing.css';
 import './listdetails.css'
 import Header from '../Header';
+import '../header.css'
+
 
 const url = 'https://edumato977.herokuapp.com/restaurant?mealtype_id='
 class Listing extends Component {

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom';
 import './topcover.css'
 import Button from '@mui/material/Button';
+import Header from '../Header'
 
 const locationurl = 'https://edumato977.herokuapp.com/location';
 const resturl = 'https://edumato977.herokuapp.com/restaurant?stateId=';

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './placeorder.css';
 import Header from '../Header'
+import '../header.css'
+
 
 const url = 'https://edumato977.herokuapp.com/menuitem'
 const PostUrl = "https://edumato977.herokuapp.com/placeOrder";

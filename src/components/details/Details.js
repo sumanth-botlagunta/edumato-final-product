@@ -4,6 +4,7 @@ import './details.css'
 import Detailsdisplay from './Detailsdisplay';
 import './menudisplay.css'
 import Header from '../Header'
+import '../header.css'
 
 const detailsurl = 'https://edumato977.herokuapp.com/details/';
 
