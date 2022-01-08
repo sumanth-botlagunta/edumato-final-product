@@ -56,13 +56,13 @@ class Detailsdisplay extends Component {
                     <div className="tabs-container">
                         <div className="tabs">
                         <Tabs>
-                            <TabList>
-                            <Tab>Details</Tab>
-                            <Tab>Contact</Tab>
-                            <Tab>Menu</Tab>
+                            <TabList >
+                            <Tab style={{borderTop: '5px solid red',borderRadius: '0px',width : "230px", height: "50px"}}>Details</Tab>
+                            <Tab style={{borderTop: '5px solid red', borderRadius: '0px',width : "230px", height: "50px"}}>Contact</Tab>
+                            <Tab style={{borderTop: '5px solid red', borderRadius: '0px',width : "230px", height: "50px"}}>Menu</Tab>
                             </TabList>
 
-                            <TabPanel className="details">
+                            <TabPanel className="details" style={{ marginTop: "40px"}} >
                                 <h2>{restdata.restaurant_name}</h2>
                                 <div className="details-text">
                                     {restdata.restaurant_name} is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -88,7 +88,7 @@ class Detailsdisplay extends Component {
                                     </div>
                                 </div>
                             </TabPanel>
-                            <TabPanel className='contact'> 
+                            <TabPanel className='contact' > 
                                 <h2>{restdata.restaurant_name}</h2>
                                 <div className="address">
                                     {restdata.address}

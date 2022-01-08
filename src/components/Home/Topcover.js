@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom';
 import './topcover.css'
+import Button from '@mui/material/Button';
 
 const locationurl = 'https://edumato977.herokuapp.com/location';
 const resturl = 'https://edumato977.herokuapp.com/restaurant?stateId=';
@@ -55,6 +56,10 @@ class Topcover extends Component {
             <div className="top-container" id="topcover">
                 <div className="container-fluid">
                 <div className="d-inline-block user-icon"><i className="fa fa-user"></i></div>
+                </div>
+                <div className="buttons">
+                    <Button variant="contained" color="success" className='button login' >Login</Button>
+                    <Button variant="contained" className="button register">Register</Button>
                 </div>
                 <div className="logo-container">
                     <div className="logo">

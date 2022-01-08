@@ -62,6 +62,8 @@ class Placeorder extends Component {
 		}
     }
 
+
+
     handleChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
     }
@@ -87,10 +89,15 @@ class Placeorder extends Component {
             
         )
 
+        sessionStorage.setItem('name', this.state.name)
+        sessionStorage.setItem('phone', this.state.name)
+        sessionStorage.setItem('email', this.state.name)
+
+
         // setTimeout(this.props.history.push(`/vieworder`), 5000);
         // setTimeout(() => { this.props.history.push(`/vieworder`) }, 2000);
         {this.sleep(2000)}
-        this.props.history.push(`/vieworder`);
+        // this.props.history.push(`/vieworder`);
     }
 
     
@@ -100,7 +107,7 @@ class Placeorder extends Component {
             <div>
                 <Header/>
                 <h1> your orders from the {this.props.match.params.restname}</h1>
-                <form method="POST"  >
+                <form method="POST" action="http://localhost:4000/paynow" >
                         <div className="row">
                             
                             <div className="col-md-12">

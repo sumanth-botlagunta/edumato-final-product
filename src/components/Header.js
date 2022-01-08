@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './header.css'
+import Button from '@mui/material/Button';
 
 function Header() {
     return (
@@ -13,8 +14,11 @@ function Header() {
 			</Link>
                     
             <div className="header-buttons">
-                <div className="btn btn-success login-button">Login</div>
-                <div className="btn btn-warning register-button">Register</div>
+                
+                    <Button variant="contained" color="success" className='button login login-button' >Login</Button>
+                
+                    <Button variant="contained" className="button register register-button">Register</Button>
+               
             </div> 
             </div>
         </div>
