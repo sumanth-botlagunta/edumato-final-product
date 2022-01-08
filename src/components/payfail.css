@@ -7,6 +7,10 @@
     flex-wrap: wrap;
 }
 
+.payfailimage img {
+    height: 500px;
+}
+
 .payfailtext{
     width: 100%;
     display: flex;
@@ -16,6 +20,8 @@
     font-weight: 800;
     color: #FF4F5A;
 }
+
+
 
 .payfailhome{
     width: 100%;
