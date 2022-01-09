@@ -8,7 +8,7 @@ class Header extends Component {
       <div>
         <div className="header">
           <div className="header">
-            <Link to="/" style={{ textDecoration: "none", color: "Red" }}>
+            <Link to="" style={{ textDecoration: "none", color: "Red" }}>
               <div className="logo">ZOMATO</div>
             </Link>
             <Condheader />
