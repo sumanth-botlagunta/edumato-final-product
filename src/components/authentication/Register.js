@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./auth.css";
 const url = "https://loginzomato.herokuapp.com/api/auth/register";
 class Register extends Component {
   constructor(props) {
@@ -29,16 +30,16 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="auth_back">
         <br />
-        <div className="panel panel-info">
-          <div className="panel-heading">
+        <div className="panel panel-info auth_form">
+          <div className="auth-heading">
             <h3>Register</h3>
           </div>
-          <div className="panel-body">
-            <div className="row">
+          <div className="auth-body">
+            <div className="row auth-cred">
               <div className="col-md-12">
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>Name</label>
                     <input
@@ -49,7 +50,7 @@ class Register extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>EmailId</label>
                     <input
@@ -60,7 +61,7 @@ class Register extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>Phone</label>
                     <input
@@ -71,7 +72,7 @@ class Register extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>Password</label>
                     <input
@@ -84,9 +85,11 @@ class Register extends Component {
                 </div>
               </div>
             </div>
-            <button className="btn btn-success" onClick={this.handleSubmit}>
-              Register
-            </button>
+            <div className="auth-button">
+              <button className="btn btn-success " onClick={this.handleSubmit}>
+                Register
+              </button>
+            </div>
           </div>
         </div>
       </div>

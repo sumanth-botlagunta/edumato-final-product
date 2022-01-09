@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./auth.css";
 const url = "https://loginzomato.herokuapp.com/api/auth/login";
 class Login extends Component {
   constructor(props) {
@@ -39,17 +40,17 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="auth_back">
         <br />
-        <div className="panel panel-warning">
-          <div className="panel-heading">
+        <div className=" auth_form">
+          <div className="auth-heading">
             <h3>Login</h3>
           </div>
-          <div className="panel-body">
+          <div className="auth-body">
             <h2 style={{ color: "red" }}>{this.state.message}</h2>
-            <div className="row">
+            <div className="row auth-cred">
               <div className="col-md-12">
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>EmailId</label>
                     <input
@@ -60,12 +61,13 @@ class Login extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-10 my-2">
                   <div className="form-group">
                     <label>Password</label>
                     <input
                       className="form-control"
                       name="password"
+                      type="password"
                       value={this.state.password}
                       onChange={this.handleChange}
                     />
@@ -73,9 +75,11 @@ class Login extends Component {
                 </div>
               </div>
             </div>
-            <button className="btn btn-success" onClick={this.handleSubmit}>
-              Login
-            </button>
+            <div className="auth-button">
+              <button className="btn btn-success " onClick={this.handleSubmit}>
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>
