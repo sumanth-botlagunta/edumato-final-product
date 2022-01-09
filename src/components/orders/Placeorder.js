@@ -15,9 +15,9 @@ class Placeorder extends Component {
             orderdata : '',
             amount : 0,
             hotel_name:this.props.match.params.restname,
-            name:'',
-            phone:'',
-            email:'',
+            name:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[0]:'',
+            phone:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[2]:'',
+            email:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[1]:'',
             address:'',
             status:'Pending'
         }
@@ -105,63 +105,74 @@ class Placeorder extends Component {
     
 
     render() {
-        return (
-            <div>
-                <Header/>
-                <h1> your orders from the {this.props.match.params.restname}</h1>
-                <form method="POST" action="http://localhost:4000/paynow" >
-                        <div className="row">
-                            
-                            <div className="col-md-12">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label>Name</label>
-                                        <input className="form-control" name="name" value={this.state.name}
-                                        onChange={this.handleChange}/>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label>EmailId</label>
-                                        <input className="form-control" name="email" value={this.state.email}
-                                        onChange={this.handleChange}/>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label>Phone</label>
-                                        <input className="form-control" name="phone" value={this.state.phone}
-                                        onChange={this.handleChange}/>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label>Address</label>
-                                        <input className="form-control" name="address" value={this.state.address}
-                                        onChange={this.handleChange}/>
-                                    </div>
-                                </div>
+        if(!sessionStorage.getItem('userData')){
+            return(
+                <div>
+                    <Header/>
+                    <div className="guest" >Login first to place booking.
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam
+                    </div>
+                </div>
+            )
+        }else{
+            return (
+                <div>
+                    <Header/>
+                    <h1> your orders from the {this.props.match.params.restname}</h1>
+                    <form method="POST" action="http://localhost:4000/paynow" >
+                            <div className="row">
                                 
+                                <div className="col-md-12">
+                                    <div className="col-md-6">
+                                        <div className="form-group">
+                                            <label>Name</label>
+                                            <input className="form-control" name="name" value={this.state.name}
+                                            onChange={this.handleChange}/>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-group">
+                                            <label>EmailId</label>
+                                            <input className="form-control" name="email" value={this.state.email}
+                                            onChange={this.handleChange}/>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-group">
+                                            <label>Phone</label>
+                                            <input className="form-control" name="phone" value={this.state.phone}
+                                            onChange={this.handleChange}/>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-group">
+                                            <label>Address</label>
+                                            <input className="form-control" name="address" value={this.state.address}
+                                            onChange={this.handleChange}/>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <input type="hidden" name="amount" value={this.state.amount}/>
+                                <input type="hidden" name="id" value={this.state.id}/>
                             </div>
-                            <input type="hidden" name="amount" value={this.state.amount}/>
-                            <input type="hidden" name="id" value={this.state.id}/>
-                        </div>
-                        <div className="menu">
-                            {this.displayorders(this.state.orderdata)}
-                        </div>
-                        <div className="row">
-                            <div className="col-md-12">
-                                <h2>Total Cost is Rs.{this.state.amount}</h2>
+                            <div className="menu">
+                                {this.displayorders(this.state.orderdata)}
                             </div>
-                        </div>
-                        <button className="btn btn-success" onClick={this.handleSubmit} 
-                        type="submit" >
-                                    Checkout
-                        </button>
-                </form>
-                
-            </div>
-        )
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <h2>Total Cost is Rs.{this.state.amount}</h2>
+                                </div>
+                            </div>
+                            <button className="btn btn-success" onClick={this.handleSubmit} 
+                            type="submit" >
+                                        Checkout
+                            </button>
+                    </form>
+                    
+                </div>
+            )
+        }
     }
 
     componentDidMount(){

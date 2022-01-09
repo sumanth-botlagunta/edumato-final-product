@@ -7,7 +7,6 @@ const Vieworder = (props) => {
             return orderdata.map((item) => {
                 return(
                     <tr>
-
                         <td>{item.id}</td>
                         <td>{item.hotel_name}</td>
                         <td>{item.name}</td>
@@ -16,6 +15,8 @@ const Vieworder = (props) => {
                         <td>{item.address}</td>
                         <td>Rs.{item.amount}</td>
                         <td>{item.status}</td>
+                        <td>{item.bank}</td>
+                        <td>{item.bank_status}</td>
                     </tr>
 
                 )
@@ -37,6 +38,8 @@ const Vieworder = (props) => {
                         <th>Address</th>
                         <th>Price</th>
                         <th>Status</th>
+                        <th>Bank</th>
+                        <th>Bank Status</th>
                     </tr>
                 </thead>
                 <tbody>
