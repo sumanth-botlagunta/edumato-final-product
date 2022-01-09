@@ -12,7 +12,7 @@ function Routing() {
   return (
     <div className="App">
       <BrowserRouter forceRefresh={true}>
-        <Route exact path="" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/Listing/:mealtype_id" component={Listing} />
         <Route path="/details/:restId" component={Details} />
         <Route path="/placeorder/:restname" component={Placeorder} />
