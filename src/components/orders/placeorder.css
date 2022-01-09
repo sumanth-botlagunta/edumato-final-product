@@ -8,6 +8,7 @@
 .menu-item{
     height: 230px;
     display: flex;
+    
     border-radius: 10px;
     margin-left: 40px !important;
     margin-top: 40px !important;

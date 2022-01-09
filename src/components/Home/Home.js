@@ -1,15 +1,17 @@
-import Topcover from './Topcover'
-import Quicksearch from './Quicksearch';
-import Quickapi from './Quickapi';
+import Topcover from "./Topcover";
+import Quicksearch from "./Quicksearch";
+import Quickapi from "./Quickapi";
+import Footer from "../Footer";
 
 function Home() {
-    return (
-      <div className="home">
-        <Topcover />
-        <Quicksearch />
-        <Quickapi />
-      </div>
-    );
-  }
-  
-  export default Home;
+  return (
+    <div className="home">
+      <Topcover />
+      <Quicksearch />
+      <Quickapi />
+      <Footer />
+    </div>
+  );
+}
+
+export default Home;

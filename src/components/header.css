@@ -29,6 +29,6 @@
 .header-buttons{
     padding-right: 20px;
     display: flex;
-    width: 250px;
+    width: 300px;
     justify-content:space-evenly;
 }
