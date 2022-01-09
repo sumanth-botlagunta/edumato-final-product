@@ -1,48 +1,55 @@
 import React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+
 const Vieworder = (props) => {
   const renderTable = ({ orderdata }) => {
     if (orderdata) {
       return orderdata.map((item) => {
         return (
-          <tr>
-            <td>{item.id}</td>
-            <td>{item.hotel_name}</td>
-            <td>{item.name}</td>
-            <td>{item.phone}</td>
-            <td>{item.email}</td>
-            <td>{item.address}</td>
-            <td>Rs.{item.amount}</td>
-            <td>{item.status}</td>
-            <td>{item.bank}</td>
-            <td>{item.bank_status}</td>
-          </tr>
+          <TableRow
+            key={item.id}
+            sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+          >
+            <TableCell component="th" scope="row">
+              {item.id}
+            </TableCell>
+            <TableCell align="right">{item.hotel_name}</TableCell>
+            <TableCell align="right">{item.name}</TableCell>
+            <TableCell align="right">{item.phone}</TableCell>
+            <TableCell align="right">{item.address}</TableCell>
+            <TableCell align="right">Rs/-{item.amount}</TableCell>
+            <TableCell align="right">{item.status}</TableCell>
+            <TableCell align="right">{item.bank}</TableCell>
+            <TableCell align="right">{item.bank_status}</TableCell>
+          </TableRow>
         );
       });
     }
   };
   return (
-    <div>
-      <center>
-        <h3>Orders</h3>
-      </center>
-      <table className=" container-fluid table  table-striped">
-        <thead className="light thead-dark">
-          <tr>
-            <th>Id</th>
-            <th>Rest Name</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Bank</th>
-            <th>Bank Status</th>
-          </tr>
-        </thead>
-        <tbody>{renderTable(props)}</tbody>
-      </table>
-    </div>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Phone</TableCell>
+            <TableCell align="right">Email</TableCell>
+            <TableCell align="right">Address</TableCell>
+            <TableCell align="right">Price</TableCell>
+            <TableCell align="right">Status</TableCell>
+            <TableCell align="right">Bank</TableCell>
+            <TableCell align="right">Bank status</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>{renderTable(props)}</TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 export default Vieworder;
