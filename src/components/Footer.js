@@ -4,12 +4,12 @@ import "./footer.css";
 export default function Footer() {
   return (
     <div>
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
+      <footer className="site-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-6">
               <h6>ZOMATO</h6>
-              <p class="text-justify">
+              <p className="text-justify">
                 Zomato <i>Find Best Restaurants </i>
                 printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an
@@ -23,9 +23,9 @@ export default function Footer() {
               </p>
             </div>
 
-            <div class="col-xs-6 col-md-3">
+            <div className="col-xs-6 col-md-3">
               <h6>Coded Skills</h6>
-              <ul class="footer-links">
+              <ul className="footer-links">
                 <li>
                   <a>ReactJS</a>
                 </li>
@@ -56,9 +56,9 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div class="col-xs-6 col-md-3">
+            <div className="col-xs-6 col-md-3">
               <h6>Info</h6>
-              <ul class="footer-links">
+              <ul className="footer-links">
                 <li>
                   <a>About Us</a>
                 </li>
@@ -76,35 +76,35 @@ export default function Footer() {
           </div>
           <hr />
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <p class="copyright-text">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 col-sm-6 col-xs-12">
+              <p className="copyright-text">
                 Copyright &copy; 2022 All Rights Reserved by
                 <a href="#">sumanth</a>.
               </p>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <ul class="social-icons">
+            <div className="col-md-4 col-sm-6 col-xs-12">
+              <ul className="social-icons">
                 <li>
-                  <a class="facebook" href="#">
-                    <i class="fa fa-facebook"></i>
+                  <a className="facebook" href="#">
+                    <i className="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="twitter" href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a className="twitter" href="#">
+                    <i className="fa fa-twitter"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="dribbble" href="#">
-                    <i class="fa fa-dribbble"></i>
+                  <a className="dribbble" href="#">
+                    <i className="fa fa-dribbble"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="linkedin" href="#">
-                    <i class="fa fa-linkedin"></i>
+                  <a className="linkedin" href="#">
+                    <i className="fa fa-linkedin"></i>
                   </a>
                 </li>
               </ul>
