@@ -5,6 +5,10 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import axios from "axios";
 import Menudisplay from "./Menudisplay";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
 
 const menuurl = "https://edumato977.herokuapp.com/menu/";
 
@@ -26,7 +30,7 @@ class Detailsdisplay extends Component {
     if (restdata) {
       return (
         <div>
-          <h1>{restdata.restaurant_name}</h1>
+          <h1 className="rest_name">{restdata.restaurant_name}</h1>
           <div className="imgslider-container">
             <div className="imgslider">
               <Carousel>
@@ -44,6 +48,10 @@ class Detailsdisplay extends Component {
           </div>
           <div className="tabs-container">
             <div className="tabs">
+              <style>
+                @import
+                url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+              </style>
               <Tabs>
                 <TabList>
                   <Tab
@@ -52,6 +60,8 @@ class Detailsdisplay extends Component {
                       borderRadius: "0px",
                       width: "230px",
                       height: "50px",
+                      fontFamily: "Josefin Sans, sans-serif",
+                      fontSize: "23px",
                     }}
                   >
                     Details
@@ -62,6 +72,8 @@ class Detailsdisplay extends Component {
                       borderRadius: "0px",
                       width: "230px",
                       height: "50px",
+                      fontFamily: "Josefin Sans, sans-serif",
+                      fontSize: "23px",
                     }}
                   >
                     Contact
@@ -72,13 +84,26 @@ class Detailsdisplay extends Component {
                       borderRadius: "0px",
                       width: "230px",
                       height: "50px",
+                      fontFamily: "Josefin Sans, sans-serif",
+                      fontSize: "23px",
                     }}
                   >
                     Menu
                   </Tab>
                 </TabList>
 
-                <TabPanel className="details" style={{ marginTop: "40px" }}>
+                <style>
+                  @import
+                  url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+                </style>
+
+                <TabPanel
+                  className="details"
+                  style={{
+                    fontSize: "23px",
+                    fontFamily: "'Padauk', sans-serif",
+                  }}
+                >
                   <h2>{restdata.restaurant_name}</h2>
                   <div className="details-text">
                     {restdata.restaurant_name} is simply dummy text of the
@@ -91,31 +116,52 @@ class Detailsdisplay extends Component {
                     1960s with the release of Letraset sheets containing Lorem
                     Ipsum passages, and more recently
                   </div>
-                  <div className="rating">{restdata.average_rating}</div>
                   <div className="mealtypes">
-                    <div className="btn btn-primary mealtype-name">
-                      {restdata.mealTypes[0].mealtype_name}
-                    </div>
-                    <div className="btn btn-secondary mealtype-name">
-                      {restdata.mealTypes[1].mealtype_name}
-                    </div>
+                    <Tooltip
+                      title={restdata.mealTypes[0].mealtype_name}
+                      color="success"
+                      arrow
+                    >
+                      <Button>{restdata.mealTypes[0].mealtype_name}</Button>
+                    </Tooltip>
+                    <Tooltip title={restdata.mealTypes[1].mealtype_name} arrow>
+                      <Button>{restdata.mealTypes[1].mealtype_name}</Button>
+                    </Tooltip>
                   </div>
 
                   <div className="cusines">
-                    <div className="btn btn-success cusine-name">
-                      {restdata.cuisines[0].cuisine_name}
-                    </div>
-                    <div className="btn btn-warning cusine-name">
-                      {restdata.cuisines[1].cuisine_name}
-                    </div>
+                    <Stack direction="row" spacing={1}>
+                      <Chip
+                        label={restdata.cuisines[0].cuisine_name}
+                        color="primary"
+                        variant="outlined"
+                      />
+                      <Chip
+                        label={restdata.cuisines[1].cuisine_name}
+                        color="success"
+                        variant="outlined"
+                      />
+                    </Stack>
                   </div>
                 </TabPanel>
-                <TabPanel className="contact">
+                <TabPanel
+                  className="contact"
+                  style={{
+                    fontSize: "23px",
+                    fontFamily: "'Padauk', sans-serif",
+                  }}
+                >
                   <h2>{restdata.restaurant_name}</h2>
                   <div className="address">{restdata.address}</div>
                   <div className="number">{restdata.contact_number}</div>
                 </TabPanel>
-                <TabPanel className="menu-tab">
+                <TabPanel
+                  className="menu-tab"
+                  style={{
+                    fontSize: "23px",
+                    fontFamily: "'Padauk', sans-serif",
+                  }}
+                >
                   <Menudisplay
                     menudata={this.state.menudata}
                     getorderdata={(data) => {

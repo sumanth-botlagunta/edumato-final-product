@@ -45,9 +45,11 @@ class Details extends Component {
             this.setorderId(data);
           }}
         />
-        <button className="btn btn-success proceed" onClick={this.proceed}>
-          Order Items
-        </button>
+        <div className="proceed_container">
+            <button className="btn btn-warning proceed" onClick={this.proceed}>
+              Order Items
+            </button>
+        </div>
         <Footer />
       </div>
     );
