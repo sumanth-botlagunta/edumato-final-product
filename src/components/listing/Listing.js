@@ -3,7 +3,6 @@ import axios from "axios";
 import Listingapi from "./Listingapi";
 import CusineFilter from "../filters/CusineFilter";
 import CostFilter from "../filters/CostFilter";
-import "./listing.css";
 import "./listdetails.css";
 import Header from "../Header";
 import "../header.css";
@@ -40,7 +39,9 @@ class Listing extends Component {
             />
             <hr />
           </div>
-          <Listingapi listdata={this.state.listing} />
+          <div className="listingapi">
+            <Listingapi listdata={this.state.listing} />
+          </div>
         </div>
         <Footer />
       </div>
