@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Quicksearch from "./Quicksearch";
 import "./quicksearch.css";
-const url = "http://edumato977.herokuapp.com/quicksearch";
+const url = "https://edumato977.herokuapp.com/quicksearch";
 class Quickapi extends Component {
   constructor(props) {
     super(props);
