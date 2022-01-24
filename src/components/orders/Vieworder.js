@@ -33,23 +33,25 @@ const Vieworder = (props) => {
     }
   };
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Phone</TableCell>
-            <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Address</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Bank</TableCell>
-            <TableCell align="right">Bank status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>{renderTable(props)}</TableBody>
-      </Table>
-    </TableContainer>
+    <div className="table_container">
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell align="right">Phone</TableCell>
+              <TableCell align="right">Email</TableCell>
+              <TableCell align="right">Address</TableCell>
+              <TableCell align="right">Price</TableCell>
+              <TableCell align="right">Status</TableCell>
+              <TableCell align="right">Bank</TableCell>
+              <TableCell align="right">Bank status</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{renderTable(props)}</TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 export default Vieworder;
