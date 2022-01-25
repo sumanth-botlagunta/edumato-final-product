@@ -38,7 +38,8 @@ const Vieworder = (props) => {
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
+              <TableCell>Id</TableCell>
+              <TableCell align="right">Name</TableCell>
               <TableCell align="right">Phone</TableCell>
               <TableCell align="right">Email</TableCell>
               <TableCell align="right">Address</TableCell>
