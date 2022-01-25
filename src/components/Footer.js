@@ -81,29 +81,29 @@ export default function Footer() {
             <div className="col-md-8 col-sm-6 col-xs-12">
               <p className="copyright-text">
                 Copyright &copy; 2022 All Rights Reserved by
-                <a href="#">sumanth</a>.
+                <a href="https://github.com/sumanth-botlagunta">sumanth</a>.
               </p>
             </div>
 
             <div className="col-md-4 col-sm-6 col-xs-12">
               <ul className="social-icons">
                 <li>
-                  <a className="facebook" href="#">
+                  <a className="facebook" href="https://www.facebook.com/sumanth.botlagunta/" target="_blank">
                     <i className="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li>
-                  <a className="twitter" href="#">
+                  <a className="twitter" href="https://twitter.com/SUMANH2408" target="_blank">
                     <i className="fa fa-twitter"></i>
                   </a>
                 </li>
                 <li>
-                  <a className="dribbble" href="#">
-                    <i className="fa fa-dribbble"></i>
+                  <a className="dribbble" href="https://github.com/sumanth-botlagunta" target="_blank">
+                    <i className="fa fa-github"></i>
                   </a>
                 </li>
                 <li>
-                  <a className="linkedin" href="#">
+                  <a className="linkedin" href="www.linkedin.com/in/sumanth-botlagunta" target="_blank">
                     <i className="fa fa-linkedin"></i>
                   </a>
                 </li>
